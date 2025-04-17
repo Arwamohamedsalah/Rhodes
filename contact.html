@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      
+        :root {
+            --primary-color: #2b5d4f;
+            --secondary-color: #e5e5e5;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+    
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .btn-custom {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            border-radius: 4px;
+            padding: 8px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom a{
+            text-decoration: none;
+            color: var(--primary-color);;
+        }
+        
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+      
+        .contact-section {
+            min-height: 100vh;
+            display: flex;
+        }
+        
+        .contact-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: var(--primary-color);
+            padding: 80px 50px;
+            color: var(--text-light);
+        }
+        
+        .contact-form h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .contact-form p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 4px;
+            color: var(--text-light);
+            padding: 12px 15px;
+            margin-bottom: 15px;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+            color: var(--text-light);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: none;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            float: right;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--text-light);
+        }
+        
+      
+        .info-section {
+            background-color: var(--text-light);
+            padding: 40px 50px;
+        }
+        
+        .info-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .info-content {
+            color: var(--text-dark);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .banner-section {
+            height: 90vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-section .carousel-inner {
+            height: 100%;
+        }
+
+        .banner-section .carousel-item {
+            height: 100%;
+        }
+
+        .banner-section .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+     
+        #bannerCarousel {
+            height: 100%;
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 50px 0;
+        }
+        
+        .footer h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer p {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer .social-links a {
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .footer .company-info {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-section {
+                flex-direction: column;
+            }
+            
+            .contact-image, .contact-form {
+                flex: none;
+                width: 100%;
+            }
+            
+            .contact-image {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">RHODES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./services.html">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pricing.html">PRICING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">CONTACT</a>
+                    </li>
+                </ul>
+                <button class="btn btn-custom ms-3"><a href="./contact.html">GET STARTED</a></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-section">
+        <div class="contact-image">
+            <div id="contactCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                        <img src="./img/1.jpg" class="d-block w-100 h-100" alt="Mountain landscape with couple sitting on rock" style="object-fit: cover;">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./img/2.jpg" class="d-block w-100 h-100" alt="Mountain landscape at sunset" style="object-fit: cover;">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./img/3.jpg" class="d-block w-100 h-100" alt="Mountain range landscape" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Contact us</h2>
+            <p>SEND US A MESSAGE. WE LOOK FORWARD TO HEARING FROM YOU.</p>
+            
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Last name">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" placeholder="Telephone">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email address">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" placeholder="Message"></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms">
+                    <label class="form-check-label" for="terms">I agree to Terms and Conditions</label>
+                </div>
+                <button type="submit" class="submit-btn">SEND</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="info-title">ADDRESS</h5>
+                    <p class="info-content">5, Rue de la Paix<br>75008 Paris, France</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="info-title">PHONE</h5>
+                    <p class="info-content">+33 1 23 45 67 89</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="info-title">EMAIL ADDRESS</h5>
+                    <p class="info-content">contact@rhodes.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section class="banner-section">
+        <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/4.jpg" alt="Mountain landscape at sunset" style="object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/5.jpg" alt="Mountain range landscape" style="object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/6.jpg" alt="Valley landscape" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>RHODES</h4>
+                    <p>Rhodes © 2023<br>All rights reserved</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Address</h4>
+                    <p>5, Rue de la Paix<br>75008 Paris, France</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Contact</h4>
+                    <p>+33 1 23 45 67 89<br>contact@rhodes.com</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row company-info">
+                <div class="col-md-6">
+                    <p>TERMS & CONDITIONS</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>PRIVACY POLICY</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            var contactCarousel = new bootstrap.Carousel(document.getElementById('contactCarousel'), {
+                interval: 4000,
+                wrap: true,
+                keyboard: true
+            });
+ 
+            var bannerCarousel = new bootstrap.Carousel(document.getElementById('bannerCarousel'), {
+                interval: 4000,
+                wrap: true,
+                keyboard: true
+            });
+            
+
+            window.addEventListener('scroll', function() {
+                var navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.backgroundColor = 'rgba(43, 93, 79, 0.9)';
+                    navbar.style.padding = '10px 0';
+                } else {
+                    navbar.style.backgroundColor = 'transparent';
+                    navbar.style.padding = '20px 0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
